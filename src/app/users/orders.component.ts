@@ -3,11 +3,9 @@ import { Http, URLSearchParams, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { AuthService }  from '../auth.service';
 import { Order }        from './order';
-
-import {
-  Router
-} from '@angular/router';
-
+import { ErrrorHandler }    from '../errorhandler.service'
+import { Router } from '@angular/router';
+import { CookieConsent }  from '../cookie.service'
 import { ContextMenuService, ContextMenuComponent } from 'angular2-contextmenu';
 
 @Component({
@@ -26,8 +24,9 @@ export class OrderComponent implements OnInit {
   constructor(private http: Http, 
               private contextMenuService: ContextMenuService,
               private authService: AuthService,
-              private router: Router) {}
-
+              private errrorHandler: ErrrorHandler,
+              private cookieService: CookieConsent,
+              private router:Router) {}
   ngOnInit() {
       this.http.get('/api/resources/categories')
         .toPromise()
@@ -41,11 +40,8 @@ export class OrderComponent implements OnInit {
     var order = new Order("TodId", this.cart, new Date().getTime());
 
     if(!this.authService.isLoggedIn()){
-      // TODO in 'cart' enthaltene Element bleiben nicht erhalten
-      // TODO außerdem, nicht gleich auf die Login-View (KeyCloak)
-      // sondern Auswahl zwischen KeyCloak und Google
-      //this.authService.login();
-      this.router.navigate(['/login', order]);
+      this.cookieService.setCookie('order', JSON.stringify(order), 1);
+      this.router.navigate(['/login']);
       return;
     }
 
@@ -57,7 +53,7 @@ export class OrderComponent implements OnInit {
         this.orderConfirmationMsg = 'Bestellung wurde abgeschickt.';
         // return console.log(result);
       })
-      .catch(this.handleError)
+      .catch(this.errrorHandler.handleError)
       .toPromise();
   }
 
@@ -76,7 +72,7 @@ export class OrderComponent implements OnInit {
          search: params
        }).subscribe(
          (response) => this.myMap.set(category, response.json()),
-         (error) => this.handleError
+         (error) => this.errrorHandler.handleError
        );
     }
   }
@@ -130,14 +126,4 @@ export class OrderComponent implements OnInit {
     this.contextMenuService.show.next({ event: $event, item: item });
     $event.preventDefault();
   }
-
-  private handleError(error: any) {
-    // log error
-    // could be something more sofisticated
-    let errorMsg = error.message || `Yikes! There was was a problem with our hyperdrive device and we couldn't retrieve your data!`;
-    console.error(errorMsg);
-    // instead of Observable we return a rejected Promise
-    return Promise.reject(errorMsg);
-  }
-
 }

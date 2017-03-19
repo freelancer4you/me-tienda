@@ -3,8 +3,8 @@
         <h4 class="panel-title"></h4>
     </div>
     <div class="panel-body">                 
-          <div *ngFor="let product of cart;let i=index;" (click)="increaseProductCount(product)"  [contextMenu]="basicMenu" [contextMenuSubject]="product">
-              <div style="padding: 10px;color:black;float: left; width: 25%;text-align:center;background-color: green;" class="jumbotron">
+          <div *ngFor="let product of cart;let i=index;" >
+              <div id="{{product.id}}cart" (click)="increaseProductCount(product)"  [contextMenu]="basicMenu" [contextMenuSubject]="product" style="padding: 10px;color:black;float: left; width: 25%;text-align:center;background-color: green;" class="jumbotron">
               <div class="{{product.id}}"></div>
                   {{product.name}}
                   <br/>
@@ -43,8 +43,8 @@
         </div>
         <div id="collapse{{category.name}}" class="panel-collapse collapse">
             <div class="panel-body">
-                <div *ngFor="let product of getProducts(category.name);let i=index;" (click)="addProductToCart(product)">
-                    <div style="padding: 10px;color:black;float: left; width: 25%;text-align:center;background-color: green;" class="jumbotron">
+                <div *ngFor="let product of getProducts(category.name);let i=index;">
+                    <div id="{{product.id}}" (click)="addProductToCart(product)" style="padding: 10px;color:black;float: left; width: 25%;text-align:center;background-color: green;" class="jumbotron">
                     <div class="{{product.id}}"></div>
                         {{product.name}}
                     </div>

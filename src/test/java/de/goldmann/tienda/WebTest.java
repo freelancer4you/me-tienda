@@ -25,7 +25,11 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 public abstract class WebTest extends FluentAdapter {
 
+<<<<<<< 1522e333165060e3e4737d0482cf266dd8942f07
     protected static final String HOST_ADRESS = "http://localhost:9000";
+=======
+    protected static final String HOST_ADRESS = "http://localhost:4200";
+>>>>>>> Initial commit
 
     protected WebDriver driver;
 

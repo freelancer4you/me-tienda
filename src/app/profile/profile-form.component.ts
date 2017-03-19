@@ -6,6 +6,8 @@ import { Address }    from './address';
 
 declare var gapi: any;
 
+import { ErrrorHandler }    from '../errorhandler.service'
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile-form.component.html',
@@ -16,13 +18,13 @@ export class ProfileComponent implements OnInit {
     address = new Address('','','','')
     profile = new Profile('','', '', '',this.address,'','')
 
-    constructor(private http: Http){}
+    constructor(private http: Http,
+                private errrorHandler: ErrrorHandler){}
 
     ngOnInit() {
     }
 
     onSubmit() { 
-      this.submitted = true;
       console.log(this.profile);
 
       this.http.post('/api/resources/defaultregistration', this.profile)
@@ -30,7 +32,7 @@ export class ProfileComponent implements OnInit {
             .map(result => {
               console.log("Registration successfull");
             })
-            .catch(this.handleError)
+            .catch(this.errrorHandler.handleError)
             .toPromise(); 
     }
     
@@ -63,7 +65,7 @@ export class ProfileComponent implements OnInit {
                 .map(result => {
                   console.log("Registration successfull");
                 })
-                .catch(so.handleError)
+                .catch(so.errrorHandler.handleError)
                 .toPromise(); 
 
               });
@@ -78,14 +80,5 @@ export class ProfileComponent implements OnInit {
   signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut();
-  }
-
-  private handleError(error: any) {
-    // log error
-    // could be something more sofisticated
-    let errorMsg = error.message || `Yikes! There was was a problem with our hyperdrive device and we couldn't retrieve your data!`;
-    console.error(errorMsg);
-    // instead of Observable we return a rejected Promise
-    return Promise.reject(errorMsg);
   }
 }

@@ -3,6 +3,8 @@ package de.goldmann.tienda.controller;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +16,8 @@ import de.goldmann.tienda.domain.ProductCategory;
 @RestController
 public class ProductsController {
 
-    final Set<Product> allProducts = new HashSet<>();
+    private static final Logger LOGGER      = LoggerFactory.getLogger(GoogleAccountController.class);
+    private final Set<Product>  allProducts = new HashSet<>();
 
     public ProductsController() {
         allProducts.add(new Product("banane", "Banane", "banane.png", ProductCategory.FRUITSANDVEGETABLES, 0));
@@ -31,7 +34,6 @@ public class ProductsController {
     public Set<Product> getProducts(@RequestParam("category") final String categoryStr) {
         try {
             final ProductCategory category = ProductCategory.valueOf(categoryStr);
-            System.out.println("Lade Prdoukte für Category: " + category);
             final Set<Product> result = new HashSet<>();
             for (final Product product : allProducts) {
                 if (product.getCategory().equals(category)) {
@@ -41,12 +43,11 @@ public class ProductsController {
             return result;
         }
         catch (final IllegalArgumentException e) {
-            System.err.println(e);
+            LOGGER.error("Fehler beim Laden der Produkte für Category: " + categoryStr, e);
             throw e;
         }
     }
 
-    // TOOD diese Resources ist noch nicht ungeschützt
     @RequestMapping(value = "/api/resources/categories", method = RequestMethod.GET)
     public Set<CategoryWrapper> getCategories() {
         final Set<CategoryWrapper> categories = new HashSet<>();

@@ -1,13 +1,19 @@
 {{order}}
 <div *ngIf="!authService.isLoggedIn()">
-  <h3>Log into your Account</h3>
+  <h3>Anmeldung notwendig</h3>
 
-  <a class="button" (click)="login()">
+  <!--a class="button" (click)="login()">
     Login
-  </a>
+  </a-->
+  <button class="btn btn-primary" type="button" (click)="login()">Anmelden</button>
+
+  <button class="btn btn-gplus" type="button" (click)="googleRegistration()">
+    <i class="fa fa-google-plus left"></i> Google +
+  </button>
+
 </div>
-<div *ngIf="authService.isLoggedIn()">
+<!--div *ngIf="authService.isLoggedIn()">
   <a class="button" (click)="authService.logout()">
     Logout
   </a>
-</div>
+</div-->

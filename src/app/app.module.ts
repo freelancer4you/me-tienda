@@ -14,6 +14,9 @@ import { ProfileComponent }   from './profile/profile-form.component';
 import { AuthService } 	 	  from './auth.service';
 import { LoginGuard } 		  from './login-guard.service';
 
+import { ErrrorHandler } 	 	  from './errorhandler.service';
+import { CookieConsent }    from './cookie.service'
+
 import { ContextMenuModule } from 'angular2-contextmenu';
 
 @NgModule({
@@ -51,7 +54,7 @@ import { ContextMenuModule } from 'angular2-contextmenu';
       }
     ])
   ],
-  providers: 	[ LoginGuard, AuthService],
+  providers: 	[ LoginGuard, AuthService, ErrrorHandler, CookieConsent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
