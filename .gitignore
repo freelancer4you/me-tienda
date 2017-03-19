@@ -1,0 +1,11 @@
+/log/
+/node_modules/
+/target/
+.classpath
+.project
+.settings
+# Package Files #
+*.jar
+*.war
+*.ear
+*.class

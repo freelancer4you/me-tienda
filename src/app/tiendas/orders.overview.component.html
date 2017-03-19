@@ -1,0 +1,25 @@
+Orders-Overview
+
+<div *ngFor="let order of orders;">
+    
+     <p>Bestellung von '{{order.client}}' am {{formatDate(order.date)}}, Entfernung (GPS-Berechnung: Weg Kunde-Tienda).</p>         
+          
+     <div class="panel-group" id="accordion" >
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapse{{order.client}}{{order.date}}">Details</a>
+                </h4>
+            </div>
+            <div id="collapse{{order.client}}{{order.date}}" class="panel-collapse collapse">
+                <div class="panel-body">                    
+                    <div *ngFor="let product of order.cart;">
+                        {{product.count}} x {{product.name}} 
+                    </div>                    
+                </div>
+            </div>
+        </div>            
+     <button class="btn btn-primary">Annehmen</button>
+                                  
+</div>

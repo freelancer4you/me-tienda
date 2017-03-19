@@ -1,0 +1,85 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">{{ name }}</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li router-active>
+              <a [routerLink]=" ['./home'] ">Home</a>
+            </li>
+            |
+            <li router-active>
+              <a [routerLink]=" ['./account'] ">Account</a>
+            </li>
+            |
+            <li class="dropdown">
+                  <a  class="dropdown-toggle" data-toggle="dropdown">Clients<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li router-active>
+                        <a [routerLink]=" ['./orders'] ">Orders</a>
+                    </li>
+                    <li router-active>
+                        <a [routerLink]=" ['./profile'] ">Profil</a>
+                    </li>
+                 </ul>
+            </li>
+            |        
+            <li class="dropdown">
+                  <a  class="dropdown-toggle" data-toggle="dropdown">Tiendas<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li router-active>
+                        <a [routerLink]=" ['./orders-overview'] ">Orders-Overview</a>
+                    </li>
+                    <li router-active>
+                        <a [routerLink]=" ['./products'] ">Products</a>
+                    </li>
+                    <li router-active>
+                        <a [routerLink]=" ['./bills'] ">Bills</a>
+                    </li>
+                    <li router-active>
+                        <a [routerLink]=" ['./profile'] ">Profil</a>
+                    </li>
+                 </ul>
+            </li>            
+            |
+            <li router-active>
+              <a [routerLink]=" ['./about'] ">About</a>
+            </li>
+          </ul>
+          
+          <ul *ngIf="!authService.isLoggedIn()" class="nav navbar-nav navbar-right">
+	        <li routerLink="/login" routerLinkActive="menu-text">
+	          <a>Login</a>
+	        </li>
+	      </ul>
+	      <ul *ngIf="authService.isLoggedIn()" class="nav navbar-nav navbar-right">
+	        <li>
+	          Logged in as <strong>{{authService.getUserName()}}</strong>
+	        </li>
+	        <li (click)="authService.logout()"  class="menu-text" routerLink="/home">
+	          <a class="button">Logout</a>
+	        </li>
+	      </ul>          
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row" style="padding-top: 40px;">
+        <div class="col-md-8 col-md-offset-2">
+          <router-outlet></router-outlet>
+        </div>
+      </div>      
+    </div><!-- /.container -->
+    <footer class="footer">
+      <div class="container text-center">
+        <!--  img [src]="angularclassLogo" width="10%">
+        WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a-->
+      </div>
+    </footer>

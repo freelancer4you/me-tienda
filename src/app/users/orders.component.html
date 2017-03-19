@@ -1,0 +1,61 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title"></h4>
+    </div>
+    <div class="panel-body">                 
+          <div *ngFor="let product of cart;let i=index;" (click)="increaseProductCount(product)"  [contextMenu]="basicMenu" [contextMenuSubject]="product">
+              <div style="padding: 10px;color:black;float: left; width: 25%;text-align:center;background-color: green;" class="jumbotron">
+              <div class="{{product.id}}"></div>
+                  {{product.name}}
+                  <br/>
+                  {{product.count}}
+              </div>
+              <template [ngIf]="i == 4">
+                 <br/>
+              </template>                                       
+          </div>        
+    </div>
+</div>
+
+<div style="position:fixed;top:35px;height:100%;width:100%;display:table; border-collapse: collapse;border:none;outline:none; pointer-events: none">
+  <div style="display: table-cell;width:200px;vertical-align: top">
+    <div style="position:absolute; top: 20px;">
+      <div style="position:fixed;top:200px;left:-200px">
+        <context-menu #basicMenu style="pointer-events:all">
+          <template contextMenuItem let-product>
+            <p>Position '{{product?.name}}' aus dem Einkaufswagen entfernen?</p>
+            <button type="button" class="btn btn-primary">Nein</button>
+            <button type="button" class="btn btn-default" (click)="removeProductFromCart(product)">Ja</button>
+          </template>          
+        </context-menu>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel-group" id="accordion" *ngFor="let category of categories" (click)="loadProducts(category.name)">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse"
+                    data-parent="#accordion" href="#collapse{{category.name}}">{{category.caption}}</a>
+            </h4>
+        </div>
+        <div id="collapse{{category.name}}" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div *ngFor="let product of getProducts(category.name);let i=index;" (click)="addProductToCart(product)">
+                    <div style="padding: 10px;color:black;float: left; width: 25%;text-align:center;background-color: green;" class="jumbotron">
+                    <div class="{{product.id}}"></div>
+                        {{product.name}}
+                    </div>
+                    <template [ngIf]="i == 4">
+                       <br/>
+                    </template>                                       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-primary" (click)="sendOrder()">Kaufen</button>
+

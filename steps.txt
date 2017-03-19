@@ -1,0 +1,13 @@
+npm install
+// Achtung folgender Schritt löscht das src/main/resources/static Verzeichnis
+ng serve --proxy-config proxy.conf.json
+// Dateien neu erzeugen
+ng build
+
+mvn spring-boot:run
+
+Entwicklung--> auf http://localhost:4200/ gehen
+Nach Änderung im Code nochmal etwas an einer Angular-Komponent ändern und schon sind Änderungen im Code als auch
+der Webseite sichtbar
+
+Problem: über http://localhost:4200/ funktioniert der Login nicht

@@ -1,0 +1,37 @@
+- Kunde bestellt Lebensmittel(Brot, Bananene, Birnen, Milch etc.) siehe Bring-App
+- Bestellung wird im Portal veröffentlich, teilnehmenden Tiendas erhalten Email/SMS/Whatsapp-Nachricht
+und können die Bestellung im Portal einsehen
+- Tiendas erstellen ein Angebot: Preis, Lieferzeit weitere Kosten
+- Kunde wählt seinen Favoriten aus der Angebotsliste(sortierung nach Preis/Lieferzeit) aus und bestätigt das Angebot
+- Tienda wird über Bestätigung informiert und liefert daraufhin die Ware an den Kunden
+- ist die Ware beim Kunden eingetroffen/bzw. ist die durch die Tienda angegebene Lieferzeit überschritten wird Kunde aufgefordert 
+Bestellung abzuschließen und eine Bewertung der Tienda abzugeben
+
+Was wird benötigt:
+ - Kunden-Interface
+    - Interface zum Erfassen der Lebensmittel
+        - Warenkorb
+        - Produkte (Brot, Bananene, Birnen, Milch)
+    - Anzeige der verbleibenden Lieferzeit
+    - Bewertung einer Tienda
+    - Anzeige der aktuellen Bestellung(en)
+    - Anzeige der durch die Tienda gemachten Angebote
+    - Übersicht über Bestellungen mit Möglichkeit bereits gemachten Einkauf zu wiederholen
+    - Übersicht über persönliche Daten
+    - Tienda-Favoriten + akzeptiere Werbung/Newsletter der ausgewählten Tiendas
+- Tienda-Interface
+    - Übersicht der laufenden Bestellungen (New) --> von hier aus gelangt man zur Bestellungen-Details-Ansicht
+    - Übersicht der angenommen Bestellungen (Acepted) --> von hier aus gelangt man zur Bestellungen-Details-Ansicht
+    - Übersicht der abgeschlossenen Bestellungen (Closed) --> von hier aus gelangt man zur Bestellungen-Details-Ansicht
+    - Übersicht der verkauften Waren (Monat, Woche, Tag) + Preise (Gesamtpreis, Einzelpreis)       
+    - Übersicht der Kunden die bei der Tienda bestellt haben, bzw. die Tienda als Favoriten hinzugefügt haben
+        --> hier könnte Tienda direkt Werbung an die Kunden verteilen, sollte diese Werbung/Newsletter akzeptiert haben
+    - Werbung: Tienda kann Werbeseite erstellen (Text+Bild), diese Werbeseite wird dann den Kunden angezeigt
+        --> bei der Anzeige wird unterschieden Werbung an alle Kunden, Werbung nur an die Kunden, die bereits bei der
+        Tienda bestellt haben (Kostenunterschied)    
+
+        
+ Ich möchte: 
+    - X automatisierte Kunden und X automatisierte Tiendas die miteinander kommunizieren
+    - Als App zur Verfügung stellen, App besteht lediglich aus einer HTML-View die, die Webseite aufruft
+ 

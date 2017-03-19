@@ -1,0 +1,24 @@
+---
+spring:
+  profiles: default
+server:
+    port: 9000
+logging:
+  level:
+    org.springframework.security: ERROR    
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:8080/auth/realms/portfolio/protocol/openid-connect/token
+      userAuthorizationUri: http://localhost:8080/auth/realms/portfolio/protocol/openid-connect/auth
+      clientId: portfolio-service
+      clientSecret: "CrxlSjwHWg0aTl-otZM8CitAem2oLKgKCnkky4OfMbc"
+    resource:
+      userInfoUri: http://localhost:8080/auth/realms/portfolio/protocol/openid-connect/userinfo
+      jwt:
+        keyValue:
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlW5EE7PvgzuKT6PTb0LSnitgpSVt4OP3RDwP8sMxPPWrf9NGPKRMSx6mexGPdDAT/8dvOB9tWQbhvmB5wV8nHGv2PFCUvZmgV15RzkNzvVBTRdGuyLA0ZzO87U/kDQQ4pHT6SwX4WdK1w79JJATMKmz8McJkI2uCZ9ihsa423FB311WB7hTzyC+/CatMpbmDD878bxiQKxkVGoDFqbg3F24a47dCYv26X+Lo/63+RQG0mhAiPbekDN0KkIJSIaKmcqB//L2uhDHG4YhdJ1YrnCTK8bVUNsFxxfGKY4EwGVX2e+vufkguXUcSRAyFtuFuoaFSf6f6MIVzUPGE2pTIfQIDAQAB
+          -----END PUBLIC KEY-----
+      id: portfolio-service
+serviceId: ${PREFIX:}resource
