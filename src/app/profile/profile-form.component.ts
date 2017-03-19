@@ -8,6 +8,7 @@ declare var gapi: any;
 
 import { ErrrorHandler }    from '../errorhandler.service'
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile-form.component.html',
@@ -25,6 +26,7 @@ export class ProfileComponent implements OnInit {
     }
 
     onSubmit() { 
+
       console.log(this.profile);
 
       this.http.post('/api/resources/defaultregistration', this.profile)
@@ -81,4 +83,5 @@ export class ProfileComponent implements OnInit {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut();
   }
+
 }

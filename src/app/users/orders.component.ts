@@ -6,6 +6,7 @@ import { Order }        from './order';
 import { ErrrorHandler }    from '../errorhandler.service'
 import { Router } from '@angular/router';
 import { CookieConsent }  from '../cookie.service'
+
 import { ContextMenuService, ContextMenuComponent } from 'angular2-contextmenu';
 
 @Component({
@@ -27,6 +28,7 @@ export class OrderComponent implements OnInit {
               private errrorHandler: ErrrorHandler,
               private cookieService: CookieConsent,
               private router:Router) {}
+
   ngOnInit() {
       this.http.get('/api/resources/categories')
         .toPromise()
@@ -72,7 +74,11 @@ export class OrderComponent implements OnInit {
          search: params
        }).subscribe(
          (response) => this.myMap.set(category, response.json()),
+<<<<<<< eeb788b02ce73fec4c3d0e0aa80bfc0b5bdaa20a
          (error) => this.errrorHandler.handleError
+=======
+         (error) => this.handleError
+>>>>>>> Initial commit
        );
     }
   }
@@ -126,4 +132,17 @@ export class OrderComponent implements OnInit {
     this.contextMenuService.show.next({ event: $event, item: item });
     $event.preventDefault();
   }
+<<<<<<< eeb788b02ce73fec4c3d0e0aa80bfc0b5bdaa20a
+=======
+
+  private handleError(error: any) {
+    // log error
+    // could be something more sofisticated
+    let errorMsg = error.message || `Yikes! There was was a problem with our hyperdrive device and we couldn't retrieve your data!`;
+    console.error(errorMsg);
+    // instead of Observable we return a rejected Promise
+    return Promise.reject(errorMsg);
+  }
+
+>>>>>>> Initial commit
 }

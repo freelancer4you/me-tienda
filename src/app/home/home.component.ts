@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+<<<<<<< eeb788b02ce73fec4c3d0e0aa80bfc0b5bdaa20a
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService }    from '../auth.service'
 import { CookieConsent }    from '../cookie.service'
+=======
+>>>>>>> Initial commit
 
 @Component({
   selector: 'app-home',
@@ -9,6 +12,7 @@ import { CookieConsent }    from '../cookie.service'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+<<<<<<< eeb788b02ce73fec4c3d0e0aa80bfc0b5bdaa20a
 
   private sub: any;
 
@@ -30,4 +34,6 @@ export class HomeComponent {
        // In a real app: dispatch action to load the details here.
     });
   }
+=======
+>>>>>>> Initial commit
 }
