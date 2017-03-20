@@ -21,7 +21,7 @@ export class LoginGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate(['/login', { redirect: state.url }]);
+    this.authService.login();
     return false;
   }
 

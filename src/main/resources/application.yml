@@ -11,14 +11,14 @@ security:
     client:
       accessTokenUri: http://localhost:8080/auth/realms/portfolio/protocol/openid-connect/token
       userAuthorizationUri: http://localhost:8080/auth/realms/portfolio/protocol/openid-connect/auth
-      clientId: portfolio-service
-      clientSecret: "CrxlSjwHWg0aTl-otZM8CitAem2oLKgKCnkky4OfMbc"
+      clientId: porfolio-service
+      clientSecret: "axxIxYc76-tmbXw7rFOsKyzbEiv7Tza3Gm19xx7xghg"
     resource:
       userInfoUri: http://localhost:8080/auth/realms/portfolio/protocol/openid-connect/userinfo
       jwt:
         keyValue:
           -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlW5EE7PvgzuKT6PTb0LSnitgpSVt4OP3RDwP8sMxPPWrf9NGPKRMSx6mexGPdDAT/8dvOB9tWQbhvmB5wV8nHGv2PFCUvZmgV15RzkNzvVBTRdGuyLA0ZzO87U/kDQQ4pHT6SwX4WdK1w79JJATMKmz8McJkI2uCZ9ihsa423FB311WB7hTzyC+/CatMpbmDD878bxiQKxkVGoDFqbg3F24a47dCYv26X+Lo/63+RQG0mhAiPbekDN0KkIJSIaKmcqB//L2uhDHG4YhdJ1YrnCTK8bVUNsFxxfGKY4EwGVX2e+vufkguXUcSRAyFtuFuoaFSf6f6MIVzUPGE2pTIfQIDAQAB
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgJpbgVnUXzJr/Ca2e6kSGX+P1jgGeFuLhCK1NYctJi7pHJEII0OufNrQ7PZn6XoLrtSlSRwCtVaDMzifFCOOAmFXp2rgRoPjSF92AR/kxqjzMErGV4hOIorZnMcz1G2or8OUytAv9HXMbt88cLLlPV2BFx4BOylvX0RMo/WB/76FfWg8ti+1nurRjjIfrIzMWYjn31sOTUY1dIz06BqeRV4qJ+UyK6AMzr6bxd8xwYbw7njCodNeU4vK/C9132Vt3GStNYMBPv+U4aoa8fzkyp1qLEt8yPUOjvQHzVJSdd4hDbi7dYjragecwtKv5snDr+6zV0U/7B7pv7aQr6xZ9wIDAQAB
           -----END PUBLIC KEY-----
-      id: portfolio-service
+      id: porfolio-service
 serviceId: ${PREFIX:}resource

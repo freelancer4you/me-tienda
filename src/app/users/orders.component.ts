@@ -6,7 +6,6 @@ import { Order }        from './order';
 import { ErrrorHandler }    from '../errorhandler.service'
 import { Router } from '@angular/router';
 import { CookieConsent }  from '../cookie.service'
-
 import { ContextMenuService, ContextMenuComponent } from 'angular2-contextmenu';
 
 @Component({
@@ -39,14 +38,14 @@ export class OrderComponent implements OnInit {
 
   public sendOrder() {    
     // Client-ID könnte auf Serverseite über Header ermittelt werden
-    var order = new Order("TodId", this.cart, new Date().getTime());
+    var order = new Order(null, this.cart, new Date().getTime());
 
     if(!this.authService.isLoggedIn()){
-      this.cookieService.setCookie('order', JSON.stringify(order), 1);
-      this.router.navigate(['/login']);
+      this.cookieService.setCookie('order', JSON.stringify(order), 1);      
+      this.authService.login();
       return;
     }
-
+    order.client = "CliendidAusAuthService";
     let requestOptions = new RequestOptions({ headers: this.authService.getAuthHeaders() });
 
     this.http.post('api/resources/orders', order, requestOptions)
@@ -74,11 +73,7 @@ export class OrderComponent implements OnInit {
          search: params
        }).subscribe(
          (response) => this.myMap.set(category, response.json()),
-<<<<<<< eeb788b02ce73fec4c3d0e0aa80bfc0b5bdaa20a
          (error) => this.errrorHandler.handleError
-=======
-         (error) => this.handleError
->>>>>>> Initial commit
        );
     }
   }
@@ -132,17 +127,5 @@ export class OrderComponent implements OnInit {
     this.contextMenuService.show.next({ event: $event, item: item });
     $event.preventDefault();
   }
-<<<<<<< eeb788b02ce73fec4c3d0e0aa80bfc0b5bdaa20a
-=======
-
-  private handleError(error: any) {
-    // log error
-    // could be something more sofisticated
-    let errorMsg = error.message || `Yikes! There was was a problem with our hyperdrive device and we couldn't retrieve your data!`;
-    console.error(errorMsg);
-    // instead of Observable we return a rejected Promise
-    return Promise.reject(errorMsg);
-  }
-
->>>>>>> Initial commit
+  
 }
