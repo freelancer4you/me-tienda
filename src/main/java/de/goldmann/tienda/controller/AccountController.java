@@ -16,20 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import de.goldmann.tienda.dao.GoogleAccountRepository;
-import de.goldmann.tienda.dto.GoogleAccountDTO;
+import de.goldmann.tienda.dao.AccountRepository;
+import de.goldmann.tienda.dto.AccountDTO;
 
 
 @RestController
 @Transactional
-public class GoogleAccountController {
+public class AccountController {
 
-    private static final Logger           LOGGER = LoggerFactory.getLogger(GoogleAccountController.class);
+    private static final Logger           LOGGER = LoggerFactory.getLogger(AccountController.class);
 
-    private final GoogleAccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     @Autowired
-    public GoogleAccountController(final GoogleAccountRepository accountRepository) {
+    public AccountController(final AccountRepository accountRepository) {
         this.accountRepository = Objects
                 .requireNonNull(accountRepository, "Parameter 'accountRepository' darf nicht null sein.");
     }
@@ -42,7 +42,7 @@ public class GoogleAccountController {
         // TODO store user in keycloak
         try
         {
-            final GoogleAccountDTO acc = mapper.readValue(payload, GoogleAccountDTO.class);
+            final AccountDTO acc = mapper.readValue(payload, AccountDTO.class);
 
             final String email = acc.getEmail();
             if (accountRepository.findByEmail(email) != null)

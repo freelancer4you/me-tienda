@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-<<<<<<< eeb788b02ce73fec4c3d0e0aa80bfc0b5bdaa20a
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService }    from '../auth.service'
-import { CookieConsent }    from '../cookie.service'
-=======
->>>>>>> Initial commit
+import { CookieConsent }  from '../cookie.service'
 
 @Component({
   selector: 'app-home',
@@ -12,7 +9,6 @@ import { CookieConsent }    from '../cookie.service'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-<<<<<<< eeb788b02ce73fec4c3d0e0aa80bfc0b5bdaa20a
 
   private sub: any;
 
@@ -25,15 +21,12 @@ export class HomeComponent {
     this.sub = this.route.params.subscribe(params => {
       
       let orderCookie = this.cookieService.getCookie('order');
-      console.log(orderCookie);
+      
       if(this.authService.isLoggedIn() && orderCookie !== undefined){          
-        this.router.navigate(['/orders']);
+        this.router.navigate(['/profile', {account:orderCookie}]);
       }      
-      this.cookieService.deleteCookie('order');
-       //console.log(params);
        // In a real app: dispatch action to load the details here.
     });
   }
-=======
->>>>>>> Initial commit
+
 }

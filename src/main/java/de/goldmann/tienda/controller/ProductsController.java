@@ -16,7 +16,7 @@ import de.goldmann.tienda.domain.ProductCategory;
 @RestController
 public class ProductsController {
 
-    private static final Logger LOGGER      = LoggerFactory.getLogger(GoogleAccountController.class);
+    private static final Logger LOGGER      = LoggerFactory.getLogger(AccountController.class);
     private final Set<Product>  allProducts = new HashSet<>();
 
     public ProductsController() {

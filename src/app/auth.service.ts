@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/Rx';
+import { Profile }    from './profile/profile';
+import { Address }    from './profile/address';
 
 @Injectable()
 export class AuthService {
@@ -39,8 +41,7 @@ export class AuthService {
     }
     this.authState = data;    
     let split_id_token = this.authState.id_token.split('.');
-    this.id_token_payload = JSON.parse(atob(split_id_token[1]));    
-    console.log(this.id_token_payload);
+    this.id_token_payload = JSON.parse(atob(split_id_token[1]));        
   }
 
   public logout() {
@@ -59,6 +60,16 @@ export class AuthService {
   public getUserName(): Headers {    
     return this.id_token_payload.preferred_username ?
     this.id_token_payload.preferred_username : this.id_token_payload.name;
+  }
+
+  public getProfile(address:Address): Profile {
+    console.log(this.id_token_payload);
+    return new Profile(this.id_token_payload.email,
+                       this.id_token_payload.name,
+                       this.id_token_payload.family_name,
+                       this.id_token_payload.given_name,
+                       this.id_token_payload.preferred_username,
+                       address);        
   }
 
   private createNonce(): string {

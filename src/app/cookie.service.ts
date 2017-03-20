@@ -19,7 +19,7 @@ export class  CookieConsent {
             //console.log(c.indexOf(cookieName));
             //console.log(c.indexOf(name));
             //console.log(c === cookieName);
-            if (c.indexOf(cookieName) === 1) {
+            if (c.indexOf(cookieName) === 0 || c.indexOf(cookieName) === 1) {
                 return c.substring(cookieName.length, c.length);
             }
         }

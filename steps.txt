@@ -11,3 +11,5 @@ Nach Änderung im Code nochmal etwas an einer Angular-Komponent ändern und scho
 der Webseite sichtbar
 
 Problem: über http://localhost:4200/ funktioniert der Login nicht
+
+Keyloak-Google:https://www.youtube.com/watch?v=8N762o_XDwc

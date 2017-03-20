@@ -55,13 +55,13 @@
           </ul>
           
           <ul *ngIf="!authService.isLoggedIn()" class="nav navbar-nav navbar-right">
-	        <li routerLink="/login" routerLinkActive="menu-text">
+	        <li (click)="authService.login()">
 	          <a>Login</a>
 	        </li>
 	      </ul>
 	      <ul *ngIf="authService.isLoggedIn()" class="nav navbar-nav navbar-right">
 	        <li>
-	          Logged in as <strong>{{authService.getUserName()}}</strong>
+	          Logged in as <strong style="color: white;">{{authService.getUserName()}}</strong>
 	        </li>
 	        <li (click)="authService.logout()"  class="menu-text" routerLink="/home">
 	          <a class="button">Logout</a>

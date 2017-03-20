@@ -6,8 +6,6 @@ import { HttpModule } 	 	from '@angular/http';
 
 import { AppComponent }  	  from './app.component';
 import { HomeComponent } 	  from './home/home.component';
-import { LoginComponent }   from './login/login.component';
-import { AccountComponent } from './account/account.component';
 import { OrderComponent }   from './users/orders.component';
 import { OrdersOverviewComponent } from './tiendas/orders.overview.component';
 import { ProfileComponent }   from './profile/profile-form.component';
@@ -20,10 +18,8 @@ import { CookieConsent }    from './cookie.service'
 import { ContextMenuModule } from 'angular2-contextmenu';
 
 @NgModule({
-  declarations: [ AppComponent, 
-                  LoginComponent, 
+  declarations: [ AppComponent,  
                   HomeComponent, 
-                  AccountComponent, 
                   OrderComponent, 
                   OrdersOverviewComponent,
                   ProfileComponent ],
@@ -35,17 +31,11 @@ import { ContextMenuModule } from 'angular2-contextmenu';
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'login', component: LoginComponent },
       { path: 'orders', 
         component: OrderComponent
       },
       { path: 'orders-overview', 
         component: OrdersOverviewComponent,
-        canActivate: [LoginGuard]
-      },
-      {
-        path: 'account',
-        component: AccountComponent,
         canActivate: [LoginGuard]
       },
       { path: 'profile', 
