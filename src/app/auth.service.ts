@@ -63,13 +63,13 @@ export class AuthService {
   }
 
   public getProfile(address:Address): Profile {
-    console.log(this.id_token_payload);
+    //console.log(this.id_token_payload);
     return new Profile(this.id_token_payload.email,
-                       this.id_token_payload.name,
-                       this.id_token_payload.family_name,
-                       this.id_token_payload.given_name,
-                       this.id_token_payload.preferred_username,
                        address);        
+  }
+
+  public getEmail(): string {
+    return this.id_token_payload.email;        
   }
 
   private createNonce(): string {

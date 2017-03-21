@@ -11,12 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.goldmann.tienda.dao.AccountRepository;
+import de.goldmann.tienda.domain.Account;
 import de.goldmann.tienda.dto.AccountDTO;
 
 
@@ -34,22 +36,27 @@ public class AccountController {
                 .requireNonNull(accountRepository, "Parameter 'accountRepository' darf nicht null sein.");
     }
 
+    @RequestMapping(value = "/api/resources/userregistered", method = RequestMethod.GET)
+    public boolean userRegistered(@RequestParam("email") final String email) throws Exception {
+        return accountRepository.findByEmail(email).isPresent();
+    }
+
     @ResponseBody
-    @RequestMapping(value = "/api/resources/googleregistration", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/resources/defaultregistration", method = RequestMethod.POST)
     public ResponseEntity<String> googleRegistration(@RequestBody final String payload) throws Exception {
 
         final ObjectMapper mapper = new ObjectMapper();
-        // TODO store user in keycloak
         try
         {
             final AccountDTO acc = mapper.readValue(payload, AccountDTO.class);
 
             final String email = acc.getEmail();
-            if (accountRepository.findByEmail(email) != null)
+            if (accountRepository.findByEmail(email).isPresent())
             {
                 return ResponseEntity.status(HttpStatus.CONFLICT).body(
                         "{\"message\":\" Es existiert bereits ein Nutzer mit der Email-Adresse '" + email + "'.\"}");
             }
+            accountRepository.save(new Account(acc));
         }
         catch (final Exception e)
         {

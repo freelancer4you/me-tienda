@@ -1,32 +1,25 @@
 package de.goldmann.tienda.domain;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
+import java.util.Collections;
+import java.util.Set;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import de.goldmann.tienda.dto.AccountDTO;
+import de.goldmann.tienda.dto.Address;
 
 @Entity
-@DiscriminatorValue("GOOGLEACCOUNT")
 public class Account extends UserId {
 
     private static final long serialVersionUID = -247943674703330516L;
 
-    @Column(name = "familyname", nullable = false, length = MAXLEN_NAME)
-    private String            familyName;
-
-    @Column(name = "givenname", nullable = true, length = MAXLEN_NAME)
-    private String            givenName;
-
-    @Column(name = "gender", nullable = false)
-    private String            gender;
-
-    @Column(name = "displayName", nullable = false)
-    private String            displayName;
-
     @Embedded
-    private PostAdress        adresse;
+    private PostAdress adresse;
+
+    @OneToMany(mappedBy = "account")
+    private Set<Order> orders;
 
     Account() {
     }
@@ -36,27 +29,21 @@ public class Account extends UserId {
     }
 
     public Account(final AccountDTO acc, final UserRole role) {
-        super(acc.getEmail(), role, RegistrationTyp.GOOGLEACCOUNT);
-        displayName = acc.getDisplayName();
-        familyName = acc.getFamilyName();
-        gender = acc.getGender();
-        givenName = acc.getGivenName();
+        super(acc.getEmail(), role);
+        final Address address = acc.getAddress();
+        adresse = new PostAdress(address.getStreet(),
+                address.getZipcode(),
+                address.getCity(),
+                address.getHouseNr(),
+                address.getPhoneNumber());
     }
 
-    public String getFamilyName() {
-        return familyName;
+    public PostAdress getAdresse() {
+        return adresse;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public String getGivenName() {
-        return givenName;
-    }
-
-    public String getDisplayName() {
-        return displayName;
+    public Set<Order> getOrders() {
+        return Collections.unmodifiableSet(orders);
     }
 
 }

@@ -14,7 +14,7 @@ public class PostAdress implements Serializable {
     public static final int MAXLEN_POSTCODE = 10;
     public static final int MAXLEN_CITY = 40;
     private static final int  MAXLEN_HOUSE_NR  = 4;
-    private static final int  MAXLEN_PHONE_NR  = 4;
+    private static final int  MAXLEN_PHONE_NR  = 32;
 
     @Column(name = "street", nullable = false, length = MAXLEN_STREET)
     private String street;

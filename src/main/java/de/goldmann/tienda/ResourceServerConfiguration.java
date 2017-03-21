@@ -25,10 +25,16 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         // @formatter:off
         http.csrf().disable()
         .authorizeRequests()
+
         .antMatchers(HttpMethod.OPTIONS, Constants.PATH_PROTECTED + "**").permitAll()// CORS requests
         .antMatchers(Constants.PATH_PROTECTED + "**").authenticated()
+
         .antMatchers(HttpMethod.OPTIONS, "/api/resources/orders").permitAll()// CORS requests
         .antMatchers("/api/resources/orders").authenticated()
+
+        .antMatchers(HttpMethod.OPTIONS, "/api/resources/userregistered").permitAll()// CORS requests
+        .antMatchers("/api/resources/userregistered").authenticated()
+
         .antMatchers("/**").anonymous();
         // @formatter:on
     }

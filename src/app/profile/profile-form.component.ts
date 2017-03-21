@@ -5,6 +5,7 @@ import { Address }    from './address';
 import { ErrrorHandler }    from '../errorhandler.service'
 import { CookieConsent }    from '../cookie.service'
 import { AuthService }    from '../auth.service'
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -18,29 +19,32 @@ export class ProfileComponent implements OnInit {
     constructor(private http: Http,
                 private errrorHandler: ErrrorHandler,
                 private cookieService: CookieConsent,
-                private authService: AuthService){}
+                private authService: AuthService,
+                private router: Router,){}
 
     ngOnInit() {
-
-      // Order laden
-      let orderCookie = this.cookieService.getCookie('order');
-      console.log(orderCookie);
-
-      //wenn Order verschickt onSubmit() löschen
-      this.cookieService.deleteCookie('order');
     }
 
     onSubmit() { 
       console.log("submit data ...");
-      /*this.http.post('/api/resources/defaultregistration', this.address)
+      console.log(this.authService.getProfile(this.address));
+
+      this.http.post('/api/resources/defaultregistration', this.authService.getProfile(this.address))
             // .map(res => res.json())
             .map(result => {
-              console.log("Registration successfull");
+              //console.log("Registration successfull");
+              //console.log(result);
+
+               // Order laden
+                let orderCookie = this.cookieService.getCookie('order');
+                //console.log(orderCookie);
+                if(orderCookie !== undefined){          
+                  this.router.navigate(['/orders']);
+                }  
             })
             .catch(this.errrorHandler.handleError)
-            .toPromise(); 
-      */
-      console.log(this.authService.getProfile(this.address));
+            .toPromise();       
+
     }
 
 }

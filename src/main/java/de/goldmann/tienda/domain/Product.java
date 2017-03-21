@@ -1,11 +1,39 @@
 package de.goldmann.tienda.domain;
 
-public class Product {
-    private final String id;
-    private final String name;
-    private final String img;
-    private final ProductCategory category;
-    private final int             count;
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Product implements Serializable {
+
+    private static final long     serialVersionUID = 1L;
+
+    @Id
+    @Column(name = "id", nullable = false, unique = true)
+    private String            id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PRODUCT_ID")
+    private Order             order;
+
+    private String            name;
+
+    private String            img;
+
+    @Enumerated(EnumType.STRING)
+    private ProductCategory   category;
+
+    private int               count;
+
+    Product() {}
 
     public Product(final String id, final String name, final String img, final ProductCategory category,
             final int count) {
@@ -14,6 +42,10 @@ public class Product {
         this.img = img;
         this.category = category;
         this.count = count;
+    }
+
+    public Order getOrder() {
+        return order;
     }
 
     public String getId() {

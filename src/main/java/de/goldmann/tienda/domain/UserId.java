@@ -38,16 +38,11 @@ public abstract class UserId implements Serializable {
     @Column(name = "role", nullable = false)
     private UserRole          role;
 
-    @Column(name = "registrationtyp", nullable = false, length = 15)
-    @Enumerated(EnumType.STRING)
-    private RegistrationTyp   registrationTyp;
-
     UserId() {}
 
-    public UserId(final String email, final UserRole role, final RegistrationTyp registrationTyp) {
+    public UserId(final String email, final UserRole role) {
         this.email = email;
         this.role = role;
-        this.registrationTyp = registrationTyp;
         final LocalDateTime ldt = LocalDateTime.now();
         final ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
         registrationDate = Date.from(zdt.toInstant());
@@ -63,10 +58,6 @@ public abstract class UserId implements Serializable {
 
     public Date getRegistrationDate() {
         return registrationDate;
-    }
-
-    public RegistrationTyp getRegistrationTyp() {
-        return registrationTyp;
     }
 
     @Override

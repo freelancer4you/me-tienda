@@ -14,6 +14,7 @@ import { ContextMenuService, ContextMenuComponent } from 'angular2-contextmenu';
 })
 export class OrderComponent implements OnInit {
 
+  allOrders =  [];
   cart = [];
   categories = [];
   orderConfirmationMsg = '';
@@ -34,6 +35,15 @@ export class OrderComponent implements OnInit {
         .then(r => r.json())
         .then(r => this.categories = r);
       this.myMap = new Map();
+      let orderCookie = this.cookieService.getCookie('order');
+      if(orderCookie !== undefined){
+        //console.log(JSON.parse(orderCookie).client);
+        //console.log(JSON.parse(orderCookie).date);
+        //console.log(orderCookie);
+        let order = JSON.parse(orderCookie);
+        this.sendOrderToServer(order);
+        this.cookieService.deleteCookie('order');
+      }
   }
 
   public sendOrder() {    
@@ -41,18 +51,23 @@ export class OrderComponent implements OnInit {
     var order = new Order(null, this.cart, new Date().getTime());
 
     if(!this.authService.isLoggedIn()){
-      this.cookieService.setCookie('order', JSON.stringify(order), 1);      
+      this.cookieService.setCookie('order', order, 1);      
       this.authService.login();
       return;
     }
-    order.client = "CliendidAusAuthService";
+    
+    this.sendOrderToServer(order);
+  }
+
+  public sendOrderToServer(order){
     let requestOptions = new RequestOptions({ headers: this.authService.getAuthHeaders() });
+    order.client = this.authService.getEmail();
 
     this.http.post('api/resources/orders', order, requestOptions)
-      // .map(res => res.json())
       .map(result => {
         this.orderConfirmationMsg = 'Bestellung wurde abgeschickt.';
-        // return console.log(result);
+        this.allOrders.push(order);
+        this.cart = [];
       })
       .catch(this.errrorHandler.handleError)
       .toPromise();
