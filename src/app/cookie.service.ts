@@ -17,7 +17,11 @@ export class  CookieConsent {
             c = ca[i].replace(/^\s\+/g, "");
          
             if (c.indexOf(cookieName) === 0 || c.indexOf(cookieName) === 1) {
-                return c.substring(cookieName.length, c.length);
+                let cookie = c.substring(cookieName.length, c.length);
+                if(cookie.startsWith('=')){
+                    return cookie.replace('=','');
+                }
+                return cookie;
             }
         }
         return undefined;

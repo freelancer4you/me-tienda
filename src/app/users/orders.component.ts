@@ -39,7 +39,7 @@ export class OrderComponent implements OnInit {
       if(orderCookie !== undefined){
         //console.log(JSON.parse(orderCookie).client);
         //console.log(JSON.parse(orderCookie).date);
-        //console.log(orderCookie);
+        console.log(orderCookie);
         let order = JSON.parse(orderCookie);
         this.sendOrderToServer(order);
         this.cookieService.deleteCookie('order');

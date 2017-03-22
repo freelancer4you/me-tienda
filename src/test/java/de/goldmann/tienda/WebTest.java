@@ -66,4 +66,8 @@ public abstract class WebTest extends FluentAdapter {
         logoutBtn.click();
     }
 
+    protected void waitUntilElementIsDisplayed(final String elementId) {
+        await().until($(elementId)).displayed();
+    }
+
 }

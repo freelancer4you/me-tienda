@@ -26,6 +26,7 @@ export class HomeComponent {
     this.sub = this.route.params.subscribe(params => {
       
       let orderCookie = this.cookieService.getCookie('order');
+      console.log(orderCookie);
       if(this.authService.isLoggedIn() && orderCookie !== undefined){          
                 
         let params: URLSearchParams = new URLSearchParams();

@@ -5,7 +5,7 @@ server:
     port: 9000
 logging:
   level:
-    org.springframework.security: DEBUG    
+    org.springframework.security: ERROR    
 security:
   oauth2:
     client:
@@ -20,5 +20,5 @@ security:
           -----BEGIN PUBLIC KEY-----
           MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgJpbgVnUXzJr/Ca2e6kSGX+P1jgGeFuLhCK1NYctJi7pHJEII0OufNrQ7PZn6XoLrtSlSRwCtVaDMzifFCOOAmFXp2rgRoPjSF92AR/kxqjzMErGV4hOIorZnMcz1G2or8OUytAv9HXMbt88cLLlPV2BFx4BOylvX0RMo/WB/76FfWg8ti+1nurRjjIfrIzMWYjn31sOTUY1dIz06BqeRV4qJ+UyK6AMzr6bxd8xwYbw7njCodNeU4vK/C9132Vt3GStNYMBPv+U4aoa8fzkyp1qLEt8yPUOjvQHzVJSdd4hDbi7dYjragecwtKv5snDr+6zV0U/7B7pv7aQr6xZ9wIDAQAB
           -----END PUBLIC KEY-----
-      id: porfolio-service
+      id: portfolio-service
 serviceId: ${PREFIX:}resource

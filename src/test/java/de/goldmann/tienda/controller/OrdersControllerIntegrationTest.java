@@ -29,35 +29,35 @@ public class OrdersControllerIntegrationTest extends WebTest {
             find("a", withText().contains(ProductCategory.FRUITSANDVEGETABLES.getCaption())).click();
 
             // banane Cart hinzufügen
-            await().until($("#banane")).displayed();
+            waitUntilElementIsDisplayed("#banane");
             $("#banane").click();
 
             // birne Cart hinzufügen
-            await().until($("#birne")).displayed();
+            waitUntilElementIsDisplayed("#birne");
             $("#birne").click();
 
             // prüfen, ob sich banane in Cart befindet
-            await().until($("#bananecart")).displayed();
+            waitUntilElementIsDisplayed("#bananecart");
             // prüfen, ob sich birne in Cart befindet
-            await().until($("#birnecart")).displayed();
+            waitUntilElementIsDisplayed("#birnecart");
 
             // Bestellung abschicken
-            find("button", withText().equalTo("Kaufen")).click();
-
-            // Loginseite wird angezeigt
-            await().until(find("h3", withText().equalTo("Anmeldung notwendig"))).displayed();
-
-            // Anmelden
-            find("button", withText().equalTo("Anmelden")).click();
+            find("button", withText().equalTo("Bestellen")).click();
 
             // Anmeldung gegen KeyCloak durchführen
-            await().until($("#username")).displayed();
+            waitUntilElementIsDisplayed("#username");
             $("#username").write("demo-user");
             $("#password").write("blade23");
             $("#kc-login").click();
 
-            System.out.println("Stop");
+            // Wieder zurück auf der Orderseite
+            waitUntilElementIsDisplayed("#actualOrders");
 
+            // Prüfung der Bestellung
+            await().until(find("p", withText().equalTo("1 x Banane"))).displayed();
+            await().until(find("p", withText().equalTo("1 x Birne"))).displayed();
+
+            System.out.println("Stop");
             // await().until(find("div", withText("Bestellung wurde
             // abgeschickt."))).present();
             //

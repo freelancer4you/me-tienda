@@ -59,7 +59,10 @@
 
 <button class="btn btn-primary" (click)="sendOrder()">Bestellen</button>
 
-<div *ngFor="let order of allOrders;" >
-    {{order.client}}
-    {{order.cart}}
+<div id="actualOrders" *ngFor="let order of allOrders;" >
+    <!--{{order.client}}-->
+    {{order.date | date:'yyyy-MM-dd HH:mm:ss'}}
+    <div *ngFor="let product of order.cart;" >
+       <p>{{product.count}} x {{product.name}}</p>
+    </div>
 </div>
