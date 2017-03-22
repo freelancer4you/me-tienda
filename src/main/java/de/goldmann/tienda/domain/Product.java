@@ -26,8 +26,6 @@ public class Product implements Serializable {
 
     private String            name;
 
-    private String            img;
-
     @Enumerated(EnumType.STRING)
     private ProductCategory   category;
 
@@ -35,11 +33,10 @@ public class Product implements Serializable {
 
     Product() {}
 
-    public Product(final String id, final String name, final String img, final ProductCategory category,
+    public Product(final String id, final String name, final ProductCategory category,
             final int count) {
         this.id = id;
         this.name = name;
-        this.img = img;
         this.category = category;
         this.count = count;
     }
@@ -56,10 +53,6 @@ public class Product implements Serializable {
         return name;
     }
 
-    public String getImg() {
-        return img;
-    }
-
     public ProductCategory getCategory() {
         return category;
     }
@@ -72,7 +65,6 @@ public class Product implements Serializable {
     public String toString() {
         return "Product ["
                 + (name != null ? "name=" + name + ", " : "")
-                + (img != null ? "img=" + img + ", " : "")
                 + (category != null ? "category=" + category + ", " : "")
                 + "count="
                 + count

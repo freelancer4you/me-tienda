@@ -13,34 +13,686 @@ body {
    width:98%;
 }
 
+.ananas{
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/ananas/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+} 
+
 .apfel { 
-    background: url('/assets/img/iphone_food_20.png') no-repeat -60px -10px; 
-    width: 50px;     
-    height: 50px; 
-    opacity:0.8;
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/apfel/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     margin:auto;
    }
 
+.avocado{
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/avocado/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+} 
+
 .banane {     
-    background: url('/assets/img/iphone_food_20.png') no-repeat -395px -10px; 
-    width: 50px;     
-    height: 50px; 
-    opacity:0.8;
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/banane/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     margin:auto;
     }
 
-.brot {     
-    background: url('/assets/img/iphone_food_20.png') no-repeat -565px -55px;     
-    width: 50px;     
-    height: 50px; 
-    opacity:0.8;
+.basilikum{
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/basilikum/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     margin:auto;
-    }
+} 
 
 .birne {     
-    background: url('/assets/img/birne-zwei.png') no-repeat;     
-    width: 50px;     
-    height: 50px; 
-    opacity:0.8;
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/birne/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }   
+
+.blumenkohl {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/blumenkohl/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }   
+
+.bohnen {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/bohnen/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }  
+
+.broccoli {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/broccoli/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.brot {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/brot/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.broetchen {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/broetchen/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.champignons-braun {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/champignons-braun/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.champignons-weiß {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/champignons-weiß/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.chicoree {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/chicoree/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.eier {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/eier/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.eisbergsalat {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/eisbergsalat/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.fenchel {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/fenchel/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.gurke {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/gurke/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.heidelbeere {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/heidelbeere/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.himbeeren {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/himbeeren/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.honig {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/honig/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.honigmelone {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/honigmelone/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.kaffee {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/kaffee/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.karotte {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/karotte/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.kartoffel {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/kartoffel/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.kaese {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/kaese/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.ketchup {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/ketchup/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.kiwi {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/kiwi/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.kirsche {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/kirsche/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.knaeckebrot {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/knaeckebrot/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.knoblauch {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/knoblauch/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.kochbanane {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/kochbanane/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.kohlrabi {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/kohlrabi/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.kopfsalat {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/kopfsalat/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.lauchzwiebeln {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/lauchzwiebeln/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.mais {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/mais/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.mandarine {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/mandarine/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.mango {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/mango/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+ .marmelade {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/marmelade/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+ .mayonnaise {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/mayonnaise/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }      
+
+ .mehl {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/mehl/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+ .melone {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/melone/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.milch {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/milch/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.minze {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/minze/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     margin:auto;
     }    
+
+.nudeln {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/nudeln/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+ .nutella {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/nutella/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }    
+
+.oel {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/oel/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.orange {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/orange/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.papaya {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/papaya/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.paprika {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/paprika/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.petersilie {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/petersilie/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.pflaumenmuss {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/pflaumenmuss/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.physalis {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/physalis/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.pizza {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/pizza/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.poree {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/poree/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.radieschen {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/radieschen/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.reis {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/reis/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.rettich {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/rettich/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.rosmarin {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/rosmarin/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.rotebeete {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/rotebeete/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.rucola {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/rucola/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }
+
+.salz {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/salz/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }  
+
+.sardellen {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/sardellen/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }         
+
+.schnittlauch {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/schnittlauch/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }   
+
+.speisezwiebeln {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/speisezwiebeln/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.tafeltraube-grün {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/tafeltraube-grün/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.tafeltraube-rose {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/tafeltraube-rose/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.thunfisch {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/thunfisch/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.toast {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/toast/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }     
+
+.toilettenpapier {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/toilettenpapier/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }   
+
+.tomate{
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/tomate/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+}    
+
+.tortenboden {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/tortenboden/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    } 
+
+.weißkohl {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/weißkohl/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }     
+
+.zitrone {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/zitrone/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }    
+
+.zucker {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/zucker/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }      
+
+.zwieback {     
+    width: 45%;
+    height: 50px;
+    background-image: url('/assets/img/zwieback/eins.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin:auto;
+    }     
