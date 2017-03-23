@@ -50,6 +50,14 @@ public class OrdersControllerIntegrationTest extends WebTest {
             $("#password").write("blade23");
             $("#kc-login").click();
 
+            // TODO hier muss die Adresse eingegeben werden
+            $("#street").write("Straße");
+            $("#houseNr").write("39");
+            $("#zipcode").write("10245");
+            $("#city").write("Berlin");
+            $("#phonenumber").write("031434323");
+            find("button", withText().equalTo("Anmelden")).click();
+
             // Wieder zurück auf der Orderseite
             waitUntilElementIsDisplayed("#actualOrders");
 

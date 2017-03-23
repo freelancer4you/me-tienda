@@ -4,7 +4,7 @@
     </div>
     <div class="panel-body">                 
           <div *ngFor="let product of cart;let i=index;" >
-              <div id="{{product.id}}cart" (click)="increaseProductCount(product)"  [contextMenu]="basicMenu" [contextMenuSubject]="product" style="padding: 10px;color:black;float: left; width: 25%;text-align:center;background-color: green;" class="jumbotron">
+              <div id="{{product.id}}cart" (click)="increaseProductCount(product)"  [contextMenu]="basicMenu" [contextMenuSubject]="product" style="margin:2px; padding: 10px;" class="jumbotron product">
               <div class="{{product.id}}"></div>
                   {{product.name}}
                   <br/>
@@ -44,7 +44,7 @@
         <div id="collapse{{category.name}}" class="panel-collapse collapse">
             <div class="panel-body">
                 <div *ngFor="let product of getProducts(category.name);let i=index;">
-                    <div id="{{product.id}}" (click)="addProductToCart(product)" style="padding: 10px;color:black;float: left; width: 25%;text-align:center;background-color: green;" class="jumbotron">
+                    <div id="{{product.id}}" (click)="addProductToCart(product)" style="margin:2px;padding: 10px;" class="jumbotron product">
                     <div class="{{product.id}}"></div>
                         {{product.name}}
                     </div>

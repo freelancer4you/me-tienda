@@ -8,7 +8,8 @@ insert into product(id, name,  category, count) values('blumenkohl', 'Blumenkohl
 insert into product(id, name,  category, count) values('bohnen', 'Bohnen', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('broccoli', 'Broccoli', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('broetchen', 'Brötchen', 'BREADANDPASTRIES', 0);
-insert into product(id, name,  category, count) values('champignons-braun', 'Champignons-Braun', 'FRUITSANDVEGETABLES', 0);
+insert into product(id, name,  category, count) values('champignons-braun', 'Champignons', 'FRUITSANDVEGETABLES', 0);
+insert into product(id, name,  category, count) values('champignons-weis', 'Champignons', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('chicoree', 'Chicoree', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('eier', 'Eier', 'MILKANDCHEESE', 0);
 insert into product(id, name,  category, count) values('eisbergsalat', 'Eisbergsalat', 'FRUITSANDVEGETABLES', 0);
@@ -68,7 +69,7 @@ insert into product(id, name,  category, count) values('toast', 'Toast', 'BREADA
 insert into product(id, name,  category, count) values('toilettenpapier', 'Toilettenpapier', 'HOUSEHOLDANDHEALTH', 0);
 insert into product(id, name,  category, count) values('tomate', 'Tomate',  'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('tortenboden', 'Tortenboden', 'INGREDIENTSANDSPICERY', 0);
-insert into product(id, name,  category, count) values('weißkohl', 'Weißkohl', 'FRUITSANDVEGETABLES', 0);
+insert into product(id, name,  category, count) values('weißkohl', 'Weisskohl', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('zitrone', 'Zitrone', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('zucker', 'Zucker', 'INGREDIENTSANDSPICERY', 0);
 insert into product(id, name,  category, count) values('zwieback', 'Zwieback', 'BREADANDPASTRIES', 0);
