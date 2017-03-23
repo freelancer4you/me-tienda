@@ -13,6 +13,14 @@ body {
    width:98%;
 }
 
+.product {
+    color:black;
+    float: left; 
+    width: 24%;
+    text-align:center;
+    background-color:#FDF5E6;
+}
+
 .ananas{
     width: 45%;
     height: 50px;
@@ -121,10 +129,10 @@ body {
     margin:auto;
     } 
 
-.champignons-weiß {     
+.champignons-weis {     
     width: 45%;
     height: 50px;
-    background-image: url('/assets/img/champignons-weiß/eins.png');
+    background-image: url('/assets/img/champignons-weis/eins.png');
     background-repeat: no-repeat;
     background-size: contain;
     margin:auto;

@@ -8,7 +8,8 @@ insert into product(id, name,  category, count) values('blumenkohl', 'Blumenkohl
 insert into product(id, name,  category, count) values('bohnen', 'Bohnen', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('broccoli', 'Broccoli', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('broetchen', 'Brötchen', 'BREADANDPASTRIES', 0);
-insert into product(id, name,  category, count) values('champignons-braun', 'Champignons-Braun', 'FRUITSANDVEGETABLES', 0);
+insert into product(id, name,  category, count) values('champignons-braun', 'Champignons', 'FRUITSANDVEGETABLES', 0);
+insert into product(id, name,  category, count) values('champignons-weis', 'Champignons', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('chicoree', 'Chicoree', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('eier', 'Eier', 'MILKANDCHEESE', 0);
 insert into product(id, name,  category, count) values('eisbergsalat', 'Eisbergsalat', 'FRUITSANDVEGETABLES', 0);
