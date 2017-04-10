@@ -1,7 +1,7 @@
 package de.goldmann.tienda.domain;
 
 public enum ProductCategory {
-    FRUITSANDVEGETABLES("Fürchte & Gemüse"),
+    FRUITSANDVEGETABLES("Früchte & Gemüse"),
     MEATANDFISH("Fleisch & Fisch"),
     MILKANDCHEESE("Milch & Käse"),
     BREADANDPASTRIES("Brot & Gebäck"),

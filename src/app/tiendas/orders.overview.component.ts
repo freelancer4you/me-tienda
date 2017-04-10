@@ -28,6 +28,6 @@ export class OrdersOverviewComponent implements OnInit {
 
   public formatDate(dateLongVal){
     let date = new Date(dateLongVal);
-    return  date.getDate() + "." + date.getMonth() + "." + date.getFullYear();
+    return  date.getDate() + "." + ("0" + (date.getMonth())).slice(-2) + "." + date.getFullYear();
   }
 }

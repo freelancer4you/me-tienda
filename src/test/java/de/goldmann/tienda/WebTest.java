@@ -33,8 +33,6 @@ public abstract class WebTest extends FluentAdapter {
     public void setUp() throws Exception {
         driver = setupDriver();
         assertNotNull(driver);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
         initFluent(driver);
     }
 
@@ -58,6 +56,8 @@ public abstract class WebTest extends FluentAdapter {
         System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
         final ChromeDriver chromeDriver = new ChromeDriver(dc);
         chromeDriver.manage().window().maximize();
+        chromeDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        chromeDriver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
         return chromeDriver;
     }
 

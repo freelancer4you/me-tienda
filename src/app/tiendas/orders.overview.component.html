@@ -8,14 +8,17 @@ Orders-Overview
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
+                    <!--href sollte eigentlich wie folgt href="#collapse{{order.client}}{{order.date}}" aussehen
+                    dazu darf aber client keine Sonderzeichen enthalten, also besser eine ID des Clients übertragen
+                    -->
                     <a class="accordion-toggle" data-toggle="collapse"
-                        data-parent="#accordion" href="#collapse{{order.client}}{{order.date}}">Details</a>
+                        data-parent="#accordion" href="#collapse{{order.date}}">Details</a>
                 </h4>
             </div>
-            <div id="collapse{{order.client}}{{order.date}}" class="panel-collapse collapse">
+            <div id="collapse{{order.date}}" class="panel-collapse collapse">
                 <div class="panel-body">                    
                     <div *ngFor="let product of order.cart;">
-                        {{product.count}} x {{product.name}} 
+                        <p>{{product.count}} x {{product.name}}</p>
                     </div>                    
                 </div>
             </div>

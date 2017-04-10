@@ -48,7 +48,9 @@ export class OrderComponent implements OnInit {
 
   public sendOrder() {    
     // Client-ID könnte auf Serverseite über Header ermittelt werden
-    var order = new Order(null, this.cart, new Date().getTime());
+    let currentDate:Date = new Date();
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    var order = new Order(null, this.cart, currentDate.getTime());
 
     if(!this.authService.isLoggedIn()){
       this.cookieService.setCookie('order', order, 1);      
