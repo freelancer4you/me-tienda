@@ -9,7 +9,9 @@ export class AuthService {
 
   private authState: AuthState;
   private clientId: string =  'portfolio-service';
-  private redirectUrl: string =  'http://localhost:8080/auth/realms/portfolio/protocol/openid-connect/auth';
+  // start keycloak with -b 192.168.2.109
+  private redirectUrl: string =  'http://192.168.2.109:8080/auth/realms/portfolio/protocol/openid-connect/auth';
+  //private redirectUrl: string =  'http://localhost:8080/auth/realms/portfolio/protocol/openid-connect/auth';
  
   private id_token_payload: any;
 
@@ -75,7 +77,10 @@ export class AuthService {
   private createNonce(): string {
     // Nonce Generierung: Statische Demo-Implementierung
     let nonce = Math.floor(Math.random() * 1000) + '';
-    localStorage.setItem('nonce', nonce);
+    // Auf dem Smartphone ist localStorage undefined
+    if(localStorage != undefined){
+      localStorage.setItem('nonce', nonce);
+    }
     return nonce;
   }
 }

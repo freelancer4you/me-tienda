@@ -69,7 +69,7 @@ insert into product(id, name,  category, count) values('toast', 'Toast', 'BREADA
 insert into product(id, name,  category, count) values('toilettenpapier', 'Toilettenpapier', 'HOUSEHOLDANDHEALTH', 0);
 insert into product(id, name,  category, count) values('tomate', 'Tomate',  'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('tortenboden', 'Tortenboden', 'INGREDIENTSANDSPICERY', 0);
-insert into product(id, name,  category, count) values('weißkohl', 'Weißkohl', 'FRUITSANDVEGETABLES', 0);
+insert into product(id, name,  category, count) values('weißkohl', 'Weisskohl', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('zitrone', 'Zitrone', 'FRUITSANDVEGETABLES', 0);
 insert into product(id, name,  category, count) values('zucker', 'Zucker', 'INGREDIENTSANDSPICERY', 0);
 insert into product(id, name,  category, count) values('zwieback', 'Zwieback', 'BREADANDPASTRIES', 0);
